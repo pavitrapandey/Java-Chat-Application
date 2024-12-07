@@ -100,6 +100,11 @@ const JoinCreateChat = () => {
             name="roomId"
             onChange={handleFormInputChange}
             value={detail.roomId}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                joinChat();
+              }
+            }}
             type="text"
              id="name"
              placeholder="Room ID"
@@ -107,7 +112,9 @@ const JoinCreateChat = () => {
             </div>
             {/* button  */}
         <div className="flex justify-center gap-2 mt-4">
-          <button onClick={joinChat} className="px-3 py-2 dark:bg-blue-500 hover:dark:bg-blue-800 rounded-full">
+          <button onClick={joinChat}
+          
+          className="px-3 py-2 dark:bg-blue-500 hover:dark:bg-blue-800 rounded-full">
             Join Room
           </button>
           <button onClick={createRoom} className="px-3 py-2 dark:bg-orange-500 hover:dark:bg-orange-800 rounded-full">
